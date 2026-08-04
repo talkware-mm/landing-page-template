@@ -2,6 +2,8 @@
 
 A reusable black-and-white landing page for community members to explain, demonstrate, and pitch their projects. It is designed for projects built in the Talkware Meetup community, while remaining simple enough to adapt in one sitting.
 
+<img width="1920" height="3815" alt="image" src="https://github.com/user-attachments/assets/f980bd1d-b423-4ce9-aa8b-00b552603e03" />
+
 ## Purpose
 
 This template helps a project team answer four questions clearly:
