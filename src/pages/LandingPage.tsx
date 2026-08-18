@@ -1,4 +1,4 @@
-import { ArrowRight, Layers3, Lightbulb, Rocket, Search, Target, TrendingUp, Wrench } from 'lucide-react';
+import { ArrowRight, Check, Layers3, Rocket, Search, Target, TrendingUp, Wrench, Sparkles, Zap, Users } from 'lucide-react';
 import { RouteLink } from '../components/RouteLink';
 import { Badge } from '../components/ui/badge';
 import { ButtonLink } from '../components/ui/button';
@@ -17,6 +17,54 @@ const steps = [
   { icon: Rocket, label: 'Step 03', value: 'Improve', note: 'Learn from real feedback and make each version more valuable than the last.' },
 ];
 
+const pricingTiers = [
+  { 
+    icon: Sparkles, 
+    label: 'Basic', 
+    price: '$9', 
+    period: '/month',
+    description: 'Perfect for individuals and small projects',
+    features: [
+      'Up to 1000 API calls',
+      'Basic analytics',
+      'Email support',
+      'Community access',
+      'Limited integrations'
+    ]
+  },
+  { 
+    icon: Zap, 
+    label: 'Pro', 
+    price: '$29', 
+    period: '/month',
+    description: 'For growing teams and serious projects',
+    features: [
+      'Up to 10,000 API calls',
+      'Advanced analytics',
+      'Priority email support',
+      'All integrations',
+      'Custom workflows',
+      'Team collaboration'
+    ]
+  },
+  { 
+    icon: Users, 
+    label: 'Enterprise', 
+    price: 'Custom', 
+    period: '',
+    description: 'For large organizations with specific needs',
+    features: [
+      'Unlimited API calls',
+      'Dedicated support',
+      'Custom integrations',
+      'SLA guarantees',
+      'On-premise deployment',
+      'Custom training',
+      'White-label options'
+    ]
+  },
+];
+
 export function LandingPage() {
   return (
     <>
@@ -28,11 +76,6 @@ export function LandingPage() {
           <div className="hero-actions">
             <RouteLink href={project.primaryUrl} className="button button-default">{project.primaryAction} <ArrowRight size={16} /></RouteLink>
             <ButtonLink href="#how-it-works" variant="outline">{project.secondaryAction}</ButtonLink>
-          </div>
-          <div className="hero-meta" aria-label="Project pitch outline">
-            <span><Target size={15} /> 01 · A real problem</span>
-            <span><Lightbulb size={15} /> 02 · A focused idea</span>
-            <span><TrendingUp size={15} /> 03 · A useful outcome</span>
           </div>
         </div>
       </section>
@@ -54,6 +97,37 @@ export function LandingPage() {
           <div className="card-grid">
             {steps.map(({ icon: Icon, label, value, note }) => (
               <Card key={label} className="detail-card"><CardHeader><span className="icon-box"><Icon size={20} /></span><span className="detail-label">{label}</span></CardHeader><CardContent><h3>{value}</h3><p>{note}</p></CardContent></Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pricing section-border muted-section" id="pricing">
+        <div className="container">
+          <div className="section-heading compact-heading"><Badge>Simple pricing</Badge><h2>Choose the plan<br />that fits your needs.</h2><p>Start with the free tier and upgrade as your project grows.</p></div>
+          <div className="card-grid">
+            {pricingTiers.map(({ icon: Icon, label, price, period, description, features }) => (
+              <Card key={label} className="price-card">
+                <CardHeader>
+                  <span className="icon-box"><Icon size={20} /></span>
+                  <span className="detail-label">{label}</span>
+                </CardHeader>
+                <CardContent>
+                  <div className="price-header">
+                    <span className="price-amount">{price}</span>
+                    {period && <span className="price-period">{period}</span>}
+                  </div>
+                  <p className="price-description">{description}</p>
+                  <ul className="price-features">
+                    {features.map((feature, index) => (
+                      <li key={index}><Check size={14} /> {feature}</li>
+                    ))}
+                  </ul>
+                  <ButtonLink href="/demo" variant={label === 'Pro' ? 'default' : 'outline'} className="price-button">
+                    {label === 'Enterprise' ? 'Contact sales' : `Get ${label}`}
+                  </ButtonLink>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
