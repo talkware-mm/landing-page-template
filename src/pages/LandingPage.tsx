@@ -6,9 +6,9 @@ import { Card, CardContent, CardHeader } from '../components/ui/card';
 import { project } from '../data/project';
 
 const features = [
-  { icon: Target, title: 'Focused on the problem', description: 'Explain the real user problem your project addresses and why current options fall short.' },
-  { icon: Layers3, title: 'Simple by design', description: 'Show how the project turns a complicated task into a clear, approachable experience.' },
-  { icon: TrendingUp, title: 'Built for outcomes', description: 'Describe the meaningful result users get—not only the features they receive.' },
+  { icon: Target, title: 'Feature 1 ', description: 'Explain the real user problem your project addresses and why current options fall short.' },
+  { icon: Layers3, title: 'Feature 2', description: 'Show how the project turns a complicated task into a clear, approachable experience.' },
+  { icon: TrendingUp, title: 'Feature 3', description: 'Describe the meaningful result users get—not only the features they receive.' },
 ];
 
 const steps = [
