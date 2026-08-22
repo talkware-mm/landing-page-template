@@ -1,29 +1,23 @@
-import { ExternalLink } from 'lucide-react';
-import { project } from '../data/project';
 import { Logo } from './Logo';
-import { RouteLink } from './RouteLink';
+import { project } from '../data/project';
+
+const footerGroups = [
+  { title: '\u101c\u1031\u1037\u101c\u102c\u101b\u1014\u103a', links: ['\u1015\u1004\u103a\u1019\u1005\u102c\u1019\u103b\u1000\u103a\u1014\u103e\u102c', '\u101e\u102e\u1038\u1014\u103e\u1036\u1021\u1019\u103b\u102d\u102f\u1038\u1021\u1005\u102c\u1038\u1019\u103b\u102c\u1038', '\u1005\u102d\u102f\u1000\u103a\u1015\u103b\u102d\u102f\u1038\u101b\u1031\u1038\u1005\u102c\u1021\u102f\u1015\u103a\u1019\u103b\u102c\u1038', '\u101b\u102c\u101e\u102e\u1021\u101c\u102d\u102f\u1000\u103a \u1005\u102d\u102f\u1000\u103a\u1015\u103b\u102d\u102f\u1038\u1015\u103c\u1000\u1039\u1001\u1039\u1012\u102d\u1014\u103a', '\u1019\u103c\u1031\u1029\u1007\u102c\u101c\u1019\u103a\u1038\u100a\u103d\u103e\u1014\u103a'] },
+  { title: '\u1021\u1000\u1030\u1021\u100a\u102e', links: ['\u1005\u1010\u1004\u103a\u101c\u1031\u1037\u101c\u102c\u101e\u1030\u101c\u1019\u103a\u1038\u100a\u103d\u103e\u1014\u103a', '\u1021\u1019\u1031\u1038\u1019\u103b\u102c\u1038\u101e\u1031\u102c\u1019\u1031\u1038\u1001\u103d\u1014\u103a\u1038\u1019\u103b\u102c\u1038', '\u1000\u103b\u103d\u1014\u103a\u102f\u1015\u103a\u1010\u102d\u102f\u1037\u1021\u1000\u103c\u1031\u102c\u1004\u103a\u1038', '\u1006\u1000\u103a\u101e\u103d\u101a\u103a\u101b\u1014\u103a'] },
+  { title: '\u101b\u102c\u101e\u102e\u1025\u1010\u102f', links: ['\u101c\u1000\u103a\u101b\u103e\u102d\u101b\u102c\u101e\u102e\u1025\u1010\u102f', '\u1010\u1005\u103a\u1015\u1010\u103a\u1005\u102c\u1001\u1014\u1037\u103a\u1019\u103e\u1014\u103a\u1038\u1001\u103b\u1000\u103a', '\u101b\u102c\u101e\u102e\u1021\u101c\u102d\u102f\u1000\u103a \u101e\u102e\u1038\u1014\u103e\u1036\u1019\u103b\u102c\u1038', '\u1005\u102d\u102f\u1000\u103a\u1015\u103b\u102d\u102f\u1038\u101b\u1031\u1038\u101e\u1010\u102d\u1015\u1031\u1038\u1001\u103b\u1000\u103a\u1019\u103b\u102c\u1038'] },
+];
 
 export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-top">
-        <div><a href="https://www.talkware.click" target="_blank" rel="noreferrer"><Logo inverse label="talkware" /></a><p>Built in Talkware Meetup.<br />A project pitch landing page template.</p></div>
-        <div className="footer-links"><span>Project</span><a href="/#about">About</a><a href="/#how-it-works">How it works</a><RouteLink href="/demo">Demo</RouteLink></div>
-        <div className="footer-links">
-          <span>Talkware</span>
-          <a href="https://www.talkware.click" target="_blank" rel="noreferrer">Main website</a>
-          <a href="https://github.com/talkware-mm/landing-page-template" target="_blank" rel="noreferrer">Template repository</a>
-          <a href="https://github.com/talkware-mm/" target="_blank" rel="noreferrer">GitHub community</a>
-          <a href="mailto:team.talkware@gmail.com">team.talkware@gmail.com</a>
-        </div>
-      </div>
-      <div className="container repo-credit-row">
-        <span className="credit-label">Open-source acknowledgements</span>
-        <div className="repo-credit-links">
-          <a href="https://github.com/AppStack-GVN/BuildersQuickTurnStack" target="_blank" rel="noreferrer">
-            With sincere gratitude to AppStack-GVN/BuildersQuickTurnStack for the foundation and inspiration that helped make this app possible. <ExternalLink size={13} />
-          </a>
-        </div>
+        <div><a href="/"><Logo inverse label={'\u1005\u102d\u102f\u1000\u103a\u1015\u103b\u102d\u102f\u1038\u101c\u1019\u103a\u1038\u100a\u103d\u103e\u1014\u103a · AgriGuide Myanmar'} /></a><p>\u101e\u102e\u1038\u1014\u103e\u1036\u1005\u102d\u102f\u1000\u103a\u1015\u103b\u102d\u102f\u1038\u1014\u100a\u103a\u1038\u1019\u103b\u102c\u1038၊ \u1005\u102d\u102f\u1000\u103a\u1015\u103b\u102d\u102f\u1038\u101b\u1031\u1038\u1005\u102c\u1021\u102f\u1015\u103a\u1019\u103b\u102c\u1038၊ \u101b\u102c\u101e\u102e\u1025\u1010\u102f\u1021\u1001\u103c\u1031\u1021\u1014\u1031\u1019\u103b\u102c\u1038\u1014\u103e\u1004\u1037\u103a \u101c\u1000\u103a\u1010\u103d\u1031\u1037\u1021\u101e\u102f\u1036\u1038\u1001\u103b\u1014\u102d\u102f\u102f\u1004\u103a\u101e\u1031\u102c \u1021\u1000\u103c\u1036\u1015\u103c\u102f\u1001\u103b\u1000\u103a\u1019\u103b\u102c\u1038\u1000\u102d\u102f \u1015\u1031\u1038\u1006\u1031\u102c\u1004\u103a\u101e\u100a\u1037\u103a \u1005\u1010\u1004\u103a\u101c\u1031\u1037\u101c\u102c\u101e\u1030\u1019\u103b\u102c\u1038\u1021\u1010\u103d\u1000\u103a \u1005\u102d\u102f\u1000\u103a\u1015\u103b\u102d\u102f\u1038\u101b\u1031\u1038\u1015\u101c\u1000\u103a\u1016\u1031\u102c\u1004\u103a\u1038\u1016\u103c\u1005\u103a\u1015\u102b\u101e\u100a\u103a။</p></div>
+        {footerGroups.map((group) => (
+          <div className="footer-links" key={group.title}>
+            <span>{group.title}</span>
+            {group.links.map((link) => <a href="/#" key={link}>{link}</a>)}
+          </div>
+        ))}
       </div>
       <div className="container footer-bottom"><span>© 2026 {project.name}</span><span>Built in Talkware Meetup</span></div>
     </footer>
