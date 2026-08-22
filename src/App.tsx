@@ -18,6 +18,8 @@ export default function App() {
 
   const page = pathname === '/demo' ? <DemoPage /> : <LandingPage />;
 
+  
+
   return (
     <MainLayout>{page}</MainLayout>
   );
